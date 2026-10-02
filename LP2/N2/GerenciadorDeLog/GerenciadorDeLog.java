@@ -1,15 +1,15 @@
 package GerenciadorDeLog;
 
 public class GerenciadorDeLog {
-    private static GerenciadorDeLog instance;
+    private static GerenciadorDeLog instancia;
 
     private GerenciadorDeLog() {}
        
-    public static GerenciadorDeLog getInstance() {
-        if (instance == null) {
-            instance = new GerenciadorDeLog();
+    public static synchronized GerenciadorDeLog getInstancia() {
+        if (instancia == null) {
+            instancia = new GerenciadorDeLog();
         }
-        return instance;
+        return instancia;
     }
 
 }
